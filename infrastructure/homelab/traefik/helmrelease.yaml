@@ -18,7 +18,7 @@ spec:
     createNamespace: false
   values:
     service:
-      type: LoadBalancer
+      type: NodePort
     ingressClass:
       enabled: true
       isDefaultClass: true
