@@ -4,3 +4,6 @@ resources:
   - namespace.yaml
   - helmrepository.yaml
   - helmrelease.yaml
+  - traefik-dashboard-auth.yaml
+  - dashboard-middleware.yaml
+  - dashboard-ingressroute.yaml
