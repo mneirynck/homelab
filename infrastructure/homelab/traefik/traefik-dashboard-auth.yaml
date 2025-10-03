@@ -1,0 +1,23 @@
+apiVersion: v1
+kind: Secret
+metadata:
+    name: traefik-dashboard-auth
+    namespace: traefik
+type: Opaque
+data:
+    users: ENC[AES256_GCM,data:ONnDiKH2r3O3APtkxGsgqUrGl/cDNzYLlgw9rfafcD+rpynXUDXtCj2z7EM8B79gd5LZqeSh3E7yf7pCzEMdEC0CZOI0H2BcPmUK7boQ2dZL6SzmCKVj7g==,iv:xrSU5c1XQiPkEuRsZc9B1gjiTHcFt1q8UJC05yOOKXs=,tag:RwtFJOpaeG6Cl+JDtlW1wQ==,type:str]
+sops:
+    age:
+        - recipient: age1exrfawcypyp4r6ffshx6hjqdxvjzqe2hdkk4qxcj44v5dzq55u4qj9zr60
+          enc: |
+            -----BEGIN AGE ENCRYPTED FILE-----
+            YWdlLWVuY3J5cHRpb24ub3JnL3YxCi0+IFgyNTUxOSA0SWh0TGhBeTU2MHZZZnJ0
+            TWd6Yy9OVEtVYWdhbVNRWjl6ME56YkNLK2hzCk1kbDhYMENYamtVT2hJUGw3L3Nm
+            NGpqRDhFMEhTcTIrQmo2SlBjRUhVcXcKLS0tIHpjZk93RHZEZXprSDFDSTlhRnZT
+            L281VzhiUTJYV0Z3TkxnRXFQT1FRancKL4pxT9SYEGxUcMk6XNsiQFJ5DRF163xP
+            SUlo87wI+zTQ7afA8nhsnK7C8RU60Me96CLfmen3dU+TnX0FwOhfvg==
+            -----END AGE ENCRYPTED FILE-----
+    lastmodified: "2025-10-03T11:56:23Z"
+    mac: ENC[AES256_GCM,data:w5n4TMqcvDx707ceFKlvKwG0ErjgNIcIEdNksvERelBcUAieQ6I2g94LYAqF59elKZ0x5wxq9YBgvkeKYKooJtNqRbOGNfdxHfd0grdhmqAXe3K3ewr8xJa3VIayxXBG5jK3FfaP1OIZkOBKIj7BfLoENE9enq8XBJlhD451iIs=,iv:TUKifukId9ZYaXNYEw16xKS2SvU1tIylH3a9fUQLw+U=,tag:j9wBC9tsWtppnaQrV+aXUg==,type:str]
+    encrypted_regex: ^(data|stringData)$
+    version: 3.11.0

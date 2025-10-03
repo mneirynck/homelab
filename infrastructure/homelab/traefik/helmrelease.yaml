@@ -22,3 +22,8 @@ spec:
     ingressClass:
       enabled: true
       isDefaultClass: true
+    dashboard:
+      enabled: true
+    additionalArguments:
+      - "--api.dashboard=true"
+      - "--api.insecure=false"
