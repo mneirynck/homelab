@@ -10,5 +10,16 @@ spec:
       sourceRef:
         kind: HelmRepository
         name: traefik
-      version: 9.18.2
+      # Use a modern chart version that contains CRDs compatible with recent Kubernetes
+      # clusters. Adjust if you prefer a pinned release.
+      version: "~> 20.0.0"
+  interval: 1m0s
+  install:
+    createNamespace: false
+  values:
+    service:
+      type: LoadBalancer
+    ingressClass:
+      enabled: true
+      isDefaultClass: true
   interval: 1m0s
