@@ -22,4 +22,3 @@ spec:
     ingressClass:
       enabled: true
       isDefaultClass: true
-  interval: 1m0s
