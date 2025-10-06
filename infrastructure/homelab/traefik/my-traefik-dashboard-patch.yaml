@@ -7,11 +7,11 @@ spec:
   # Add the dashboard-auth middleware so the chart-created dashboard route is protected.
   # We don't alter the existing routes; we only inject the middleware into each route.
   routes:
-  - kind: Rule
-    match: PathPrefix(`/dashboard`) || PathPrefix(`/api`)
-    middlewares:
-    - name: dashboard-auth
-      namespace: traefik
-    services:
-    - kind: TraefikService
-      name: api@internal
+    - kind: Rule
+      match: PathPrefix(`/dashboard`) || PathPrefix(`/api`)
+      middlewares:
+        - name: dashboard-auth
+          namespace: traefik
+      services:
+        - kind: TraefikService
+          name: api@internal
