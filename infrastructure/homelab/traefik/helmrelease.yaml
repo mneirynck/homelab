@@ -24,6 +24,13 @@ spec:
       isDefaultClass: true
     dashboard:
       enabled: true
+    # Prevent the chart from creating its own IngressRoute for the dashboard.
+    # We keep the dashboard enabled so the internal api@internal and dashboard
+    # are available, but disable the chart-owned IngressRoute so we can
+    # manage routing (and middleware) declaratively in this repo.
+    ingressRoute:
+      dashboard:
+        enabled: false
     additionalArguments:
       - "--api.dashboard=true"
       - "--api.insecure=false"
