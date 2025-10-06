@@ -1,0 +1,33 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: hajimari
+  namespace: hajimari
+  labels:
+    app: hajimari
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: hajimari
+  template:
+    metadata:
+      labels:
+        app: hajimari
+    spec:
+      containers:
+        - name: hajimari
+          image: toboshii/hajimari:latest
+          imagePullPolicy: IfNotPresent
+          ports:
+            - containerPort: 80
+          env:
+            # Hajimari needs access to the Kubernetes API to discover ingresses
+            - name: KUBECONFIG
+              value: ""
+          readinessProbe:
+            httpGet:
+              path: /
+              port: 80
+            initialDelaySeconds: 5
+            periodSeconds: 10
