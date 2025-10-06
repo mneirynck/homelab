@@ -1,0 +1,21 @@
+apiVersion: helm.toolkit.fluxcd.io/v2
+kind: HelmRelease
+metadata:
+  name: hajimari
+  namespace: hajimari
+spec:
+  chart:
+    spec:
+      chart: hajimari
+      sourceRef:
+        kind: HelmRepository
+        name: hajimari
+      version: ""
+  interval: 1m0s
+  install:
+    createNamespace: false
+  values:
+    # Keep default settings; you can override themes, namespaceSelector, etc.
+    # Example: set instanceName or defaultEnable as needed
+    # instanceName: "home-hajimari"
+    # defaultEnable: false

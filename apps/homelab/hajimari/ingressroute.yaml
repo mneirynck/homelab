@@ -1,0 +1,18 @@
+apiVersion: traefik.containo.us/v1alpha1
+kind: IngressRoute
+metadata:
+  name: hajimari
+  namespace: hajimari
+spec:
+  entryPoints:
+    - web
+    - websecure
+  routes:
+    - match: Host(`hajimari.home`)
+      kind: Rule
+      services:
+        - name: hajimari
+          kind: Service
+          port: 80
+  tls:
+    secretName: hajimari-tls
