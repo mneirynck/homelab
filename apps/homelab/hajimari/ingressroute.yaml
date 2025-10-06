@@ -13,6 +13,5 @@ spec:
       services:
         - name: hajimari
           kind: Service
-          port: 80
-  tls:
-    secretName: hajimari-tls
+          port: 3000
+# TLS is disabled for now; enable when you have a certificate (cert-manager or secret)
