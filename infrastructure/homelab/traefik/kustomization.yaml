@@ -3,8 +3,8 @@ kind: Kustomization
 resources:
   - namespace.yaml
   - helmrepository.yaml
+  - helmrelease.yaml
   - traefik-dashboard-auth.yaml
   - dashboard-middleware.yaml
   - dashboard-ingressroute.yaml
-patchesStrategicMerge:
-  - my-traefik-dashboard-patch.yaml
+# no strategic merge patches required

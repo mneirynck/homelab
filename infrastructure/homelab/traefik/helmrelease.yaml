@@ -10,8 +10,7 @@ spec:
       sourceRef:
         kind: HelmRepository
         name: traefik
-      # Use a modern chart version that contains CRDs compatible with recent Kubernetes
-      # clusters. Adjust if you prefer a pinned release.
+      # Pin to a modern chart version compatible with recent Kubernetes
       version: "~> 20.0.0"
   interval: 1m0s
   install:
@@ -24,10 +23,7 @@ spec:
       isDefaultClass: true
     dashboard:
       enabled: true
-    # Prevent the chart from creating its own IngressRoute for the dashboard.
-    # We keep the dashboard enabled so the internal api@internal and dashboard
-    # are available, but disable the chart-owned IngressRoute so we can
-    # manage routing (and middleware) declaratively in this repo.
+    # Disable chart-owned IngressRoute to let our repo-managed IngressRoute take effect
     ingressRoute:
       dashboard:
         enabled: false
