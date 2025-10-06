@@ -7,3 +7,5 @@ resources:
   - traefik-dashboard-auth.yaml
   - dashboard-middleware.yaml
   - dashboard-ingressroute.yaml
+patchesStrategicMerge:
+  - my-traefik-dashboard-patch.yaml
